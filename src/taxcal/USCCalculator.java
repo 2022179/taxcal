@@ -8,10 +8,9 @@ package taxcal;
  *
  * @author Primm
  */
-class IncomeTaxCalculator {
+class USCCalculator {
 
-    IncomeTaxCalculator(User user) {
-        
+    USCCalculator(User user) {
     }
     
 }

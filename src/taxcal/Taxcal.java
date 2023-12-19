@@ -32,6 +32,10 @@ public class Taxcal {
         // Create person object
         User user = new User(name, grossIncome, taxCredits);
         
+        IncomeTaxCalculator incomeTaxCalculator = new IncomeTaxCalculator(user);
+        USCCalculator uscCalculator = new USCCalculator(user);
+        PRSICalculator prsiCalculator = new PRSICalculator(user);
+        
 
     }
 }
