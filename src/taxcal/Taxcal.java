@@ -31,10 +31,14 @@ public class Taxcal {
 
         // Create person object
         User user = new User(name, grossIncome, taxCredits);
-        
+        // to calculate the taxes 
         IncomeTaxCalculator incomeTaxCalculator = new IncomeTaxCalculator(user);
         USCCalculator uscCalculator = new USCCalculator(user);
         PRSICalculator prsiCalculator = new PRSICalculator(user);
+        
+        double incomeTax = incomeTaxCalculator.calculateTax();
+        double usc = uscCalculator.calculateTax();
+        double prsi = prsiCalculator.calculateTax();
         
 
     }

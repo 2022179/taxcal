@@ -11,21 +11,37 @@ package taxcal;
 class User {
     
     private String name;
+    private String username;
+    private String password;
     private double grossIncome;
     private int taxCredits;
     private double PRSIBand;
     private double PRSIRate;
+   
 //constructor
+
     public User(String name, double grossIncome, int taxCredits) {
         this.name = name;
+        this.username = username;
+        this.password = password;
         this.grossIncome = grossIncome;
         this.taxCredits = taxCredits;
         this.PRSIBand = PRSIBand;
         this.PRSIRate = PRSIRate;
     }
+  
 //getters
+
     public String getName() {
         return name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public double getGrossIncome() {
@@ -43,5 +59,6 @@ class User {
     public double getPRSIRate() {
         return PRSIRate;
     }
+  
 
 }
