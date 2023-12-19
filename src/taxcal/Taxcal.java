@@ -34,6 +34,7 @@ public class Taxcal {
         
         IncomeTaxCalculator incomeTaxCalculator = new IncomeTaxCalculator(user);
         USCCalculator uscCalculator = new USCCalculator(user);
+        PRSICalculator prsiCalculator = new PRSICalculator(user);
         
 
     }
