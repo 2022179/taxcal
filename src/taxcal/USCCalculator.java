@@ -13,6 +13,16 @@ class USCCalculator {
     USCCalculator(User user) {
     }
 
+    
+    public double calculateUSC() {
+        double uscAmount = 0;
+        // Calculate the USC based on the user's income and other factors
+        // (e.g., PRSI rate, tax credits)
+        // ...
+
+        return uscAmount;
+    }
+
     double calculateTax() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
