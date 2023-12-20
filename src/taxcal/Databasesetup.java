@@ -13,7 +13,7 @@ import java.sql.Statement;
  *
  * @author User
  */
-public class Databasesetup {
+public class Databasesetup extends Database{
      final static String DB_BASE_URL = "jdbc:mysql://localhost";
     final static String USER = "CCT";
     final static String PASSWORD ="dublin";
