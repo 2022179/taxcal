@@ -23,8 +23,7 @@ public class DBWriter extends Database {
     }
 
     static boolean deleteUser(int userId) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        return true; }
 
     static List<String> getOperationsPerformedByOtherUsers() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -58,6 +57,7 @@ public class DBWriter extends Database {
         return false;
             }
         }
-        
+        return true;
     
     }
+}

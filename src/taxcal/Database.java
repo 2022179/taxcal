@@ -19,5 +19,4 @@ public class Database {
     //jdbc:mysql://localhost/taxcal
     protected final static String DB_URL = DB_BASE_URL +"/"+ DB_NAME;
 
-    
 }
