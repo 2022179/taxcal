@@ -9,5 +9,6 @@ package taxcal;
  * @author User
  */
 public interface CalculationInterface {
-    
+    void calculateIncomeTax(User user, double grossIncome, double taxCredits, String PRSIBand);
+    void saveSolution(User user,double grossIncome, double taxCredits, String PRSIBand, double incomeTax );
 }
