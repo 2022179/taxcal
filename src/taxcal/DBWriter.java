@@ -17,30 +17,27 @@ import java.util.List;
 public class DBWriter extends Database {
     public boolean addUser(User user) throws SQLException{
      try(
-          Connection conn = DriverManager.getConnection(DB_URL, USER,PASSWORD);   
-          Statement stmt = conn.createStatement();
+          Connection conn = DriverManager.getConnection(DB_URL, USER,PASSWORD);  
+          PreparedStatement stmt = conn.prepareStatement("INSERT INTO " + TABLE_NAME + " VALUES (?, ?, ?, ?, ?, ?, ?)");
+
              
         ){
-     String sql = String.format("INSERT INTO" + TABLE_NAME + " VALUES ("
-             +"'%S', '%S', '%S','%s','%s','%s', %d);",
-     
-     user.getName(),user.getusername(), user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
-     
-     stmt.execute(sql);
-     return true;
-     
-     }catch(Exception e){
-         e.printStackTrace();
-         return false;
-    
-     }
-     
+         stmt.setString(1, user.getName());
+            stmt.setString(2, user.getusername());
+            stmt.setString(3, user.getPassword());
+            stmt.setDouble(4, user.getGrossIncome());
+            stmt.setDouble(5, user.getPRSIRate());
+            //stmt.setString(6, user.getPRSIBand());
+            stmt.setInt(7, user.getTaxCredits());
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
-    
-    public boolean addAllUser(List<User>userlist){
-        return true;
-    
-    
-    }
-    
-}
+
+    public boolean addAllUser(List<User> userList) throws SQLException, IOException, ClassNotFoundException {
+        for (User user : userList) {
+            if (!addUser(user)) {
+                return false;
