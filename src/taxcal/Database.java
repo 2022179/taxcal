@@ -14,7 +14,7 @@ public class Database {
     protected final static String USER= "ooc2023";
     protected final static String PASSWORD ="ooc2023";
     // this will shows the database connected
-    protected final static String DABE_NAME = "taxcal";
+    protected final static String DB_NAME = "taxcal";
     protected final static String TABLE_NAME = "userdata";
     //jdbc:mysql://localhost/taxcal
     protected final static String DB_URL = DB_BASE_URL +"/"+ DB_NAME;
