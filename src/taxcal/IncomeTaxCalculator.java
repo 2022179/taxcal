@@ -9,10 +9,17 @@ package taxcal;
  * @author Primm
  */
 class IncomeTaxCalculator {
+    
+    private final User user;
 
     IncomeTaxCalculator(User user) {
+        this.user = user;
         
     }
+
+//    double calculateTax() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
 
     double calculateTax() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
