@@ -17,18 +17,16 @@ import java.util.Scanner;
     class RegularUser extends User{
 
     private static void viewUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+}
 
     private static void removeUser() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+      }
 
     private static void reviewOperations() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+      }
+    
   public RegularUser(String name, double grossIncome, int taxCredits) {
-        super(name, grossIncome, taxCredits);
+        super(name, taxCredits);
     }  
 
     public static void login(Scanner scanner) {

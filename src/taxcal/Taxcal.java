@@ -4,6 +4,10 @@
  */
 package taxcal;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -18,7 +22,7 @@ public class Taxcal {
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);
-
+    
         // Prompt user for input
         System.out.println("Enter your name:");
         String name = scanner.nextLine();
@@ -30,7 +34,7 @@ public class Taxcal {
         int taxCredits = scanner.nextInt();
 
         // Create person object
-        User user = new User(name, grossIncome, taxCredits);
+        User user = new User(name, taxCredits);
         
         // to calculate the taxes 
         IncomeTaxCalculator incomeTaxCalculator = new IncomeTaxCalculator(user);
@@ -40,6 +44,11 @@ public class Taxcal {
         double incomeTax = incomeTaxCalculator.calculateTax();
         double usc = uscCalculator.calculateTax();
         double prsi = prsiCalculator.calculateTax();
+    }
+    public static void dataInput() throws FileNotFoundException, IOException{
+    BufferedReader br = new BufferedReader(new FileReader("taxpayer.csv"));// adding a file method
+    String line;// = br.readLine();// reading line 
+        
         
         // Display tax calculation results
         System.out.println("Tax Calculation Results:");

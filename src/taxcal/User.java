@@ -20,7 +20,7 @@ class User {
    
 //constructor
 
-    public User(String name, double grossIncome, int taxCredits) {
+    public User(String name, int taxCredits) {
         this.name = name;
         this.username = username;
         this.password = password;
