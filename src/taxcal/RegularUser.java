@@ -7,6 +7,7 @@ package taxcal;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
@@ -14,65 +15,70 @@ import java.util.List;
  */
 
     class RegularUser extends User{
-   public RegularUser(String name, double grossIncome, int taxCredits) {
-        super(name, grossIncome, taxCredits);
+
+    private static void viewUsers() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    // Modify their own profile (name, surname, and any other attribute you define for them).
+    private static void removeUser() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
-    public void modifyProfile(String attributeName, String newValue) {
-        if (attributeName.equals("name")) {
-            this.setName(newValue);
-        } else if (attributeName.equals("surname")) {
-            this.setSurname(newValue);
+    private static void reviewOperations() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    public RegularUser(String username, String password, String name, String surname) {
+        super(username, password, name, surname);
+    }
+
+    public static void login(Scanner scanner) {
+        System.out.println("Enter your username:");
+        String username = scanner.nextLine();
+
+        System.out.println("Enter your password:");
+        String password = scanner.nextLine();
+
+        if (username.equals("CCT") && password.equals("Dublin")) {
+            System.out.println("Administrator login successful!");
+            runAdminCommands(scanner);
         } else {
-            System.out.println("Invalid attribute name");
+            System.out.println("Invalid username or password.");
         }
     }
 
-    // Access a list of all other users in the system.
+    private static void runAdminCommands(Scanner scanner) {
+        boolean running = true;
 
-    public List<User> getAllOtherUsers() throws SQLException, IOException, ClassNotFoundException {
-        // Retrieve a list of all users from the database
-        List<User> allUsers = DBWriter.getAllUsers();
+        while (running) {
+            System.out.println("\nPlease enter an administrative command:");
+            System.out.println("modify profile");
+            System.out.println("view users");
+            System.out.println("remove user");
+            System.out.println("review operations");
+            System.out.println("exit");
 
-        // Remove the current user from the list
-        allUsers.remove(this);
+            String command = scanner.nextLine();
 
-        return allUsers;
-    }
-
-    // Remove other users from the system.
-
-    public boolean removeUser(int userId) throws SQLException, IOException, ClassNotFoundException {
-        // Check if the user ID is valid
-        List<User> allUsers = DBWriter.getAllUsers();
-        if (!allUsers.stream().anyMatch(user -> user.getId() == userId)) {
-            System.out.println("Invalid user ID");
-            return false;
+            switch (command) {
+                case "modify profile":
+                    // Implement logic to modify the admin's profile
+                    break;
+                case "view users":
+                    viewUsers();
+                    break;
+                case "remove user":
+                    removeUser();
+                    break;
+                case "review operations":
+                    reviewOperations();
+                    break;
+                case "exit":
+                    System.out.println("Exiting...");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid command. Please enter a valid command.");
+            }
         }
-
-        // Delete the user from the database
-        boolean deleted = DBWriter.deleteUser(userId);
-
-        return deleted;
-    }
-
-    // Review the operations performed by other users.
-
-    public List<String> getOperationsPerformedByOtherUsers() throws SQLException, IOException, ClassNotFoundException {
-        // Retrieve a list of all operations performed by other users from the database
-        List<String> operations = DBWriter.getOperationsPerformedByOtherUsers();
-
-        return operations;
-    }
-
-    private void setName(String newValue) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void setSurname(String newValue) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
-
