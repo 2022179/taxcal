@@ -22,9 +22,9 @@ public class DBWriter extends Database {
              
         ){
      String sql = String.format("INSERT INTO" + TABLE_NAME + " VALUES ("
-             +"'%S', '%S', '%S', %d);",
+             +"'%S', '%S', '%S','%s','%s','%s', %d);",
      
-     user.getName(),user.getusername user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
+     user.getName(),user.getusername(), user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
      
      stmt.execute(sql);
      return true;
