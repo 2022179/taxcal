@@ -4,8 +4,10 @@
  */
 package taxcal;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -17,6 +19,14 @@ import java.util.List;
 public class DBWriter extends Database {
 
     static List<User> getAllUsers() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    static boolean deleteUser(int userId) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    static List<String> getOperationsPerformedByOtherUsers() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     public boolean addUser(User user) throws SQLException{
@@ -44,4 +54,10 @@ public class DBWriter extends Database {
     public boolean addAllUser(List<User> userList) throws SQLException, IOException, ClassNotFoundException {
         for (User user : userList) {
             if (!addUser(user)) {
-                return false;
+               
+        return false;
+            }
+        }
+        
+    }
+    
