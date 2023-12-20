@@ -15,6 +15,10 @@ import java.util.List;
  * @author User
  */
 public class DBWriter extends Database {
+
+    static List<User> getAllUsers() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     public boolean addUser(User user) throws SQLException{
      try(
           Connection conn = DriverManager.getConnection(DB_URL, USER,PASSWORD);  
