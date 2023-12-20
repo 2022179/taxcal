@@ -34,7 +34,7 @@ public class Taxcal {
         int taxCredits = scanner.nextInt();
 
         // Create person object
-        User user = new User(name, taxCredits);
+        User user = new User(name, taxCredits) {};
         
         // to calculate the taxes 
         IncomeTaxCalculator incomeTaxCalculator = new IncomeTaxCalculator(user);
@@ -44,12 +44,8 @@ public class Taxcal {
         double incomeTax = incomeTaxCalculator.calculateTax();
         double usc = uscCalculator.calculateTax();
         double prsi = prsiCalculator.calculateTax();
-    }
-    public static void dataInput() throws FileNotFoundException, IOException{
-    BufferedReader br = new BufferedReader(new FileReader("taxpayer.csv"));// adding a file method
-    String line;// = br.readLine();// reading line 
         
-        
+                
         // Display tax calculation results
         System.out.println("Tax Calculation Results:");
         System.out.println("Name: " + name);
@@ -59,6 +55,13 @@ public class Taxcal {
         System.out.println("USC: " + usc);
         System.out.println("PRSI: " + prsi);
         System.out.println("Total Tax: " + (incomeTax + usc + prsi));
+    }
+    public static void dataInput() throws FileNotFoundException, IOException{
+        
+    BufferedReader br = new BufferedReader(new FileReader("taxpayer.csv"));// adding a file method
+    
+    String line;// = br.readLine();// reading line 
+     
 
     }
 }

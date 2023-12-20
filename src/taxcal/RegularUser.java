@@ -74,7 +74,7 @@ import java.util.Scanner;
                     System.out.println("Exiting...");
                     running = false;
                     break;
-                default:
+                default://error message 
                     System.out.println("Invalid command. Please enter a valid command.");
             }
         }
