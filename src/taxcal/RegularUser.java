@@ -27,9 +27,9 @@ import java.util.Scanner;
     private static void reviewOperations() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    public RegularUser(String username, String password, String name, String surname) {
-        super(username, password, name, surname);
-    }
+  public RegularUser(String name, double grossIncome, int taxCredits) {
+        super(name, grossIncome, taxCredits);
+    }  
 
     public static void login(Scanner scanner) {
         System.out.println("Enter your username:");
@@ -81,4 +81,6 @@ import java.util.Scanner;
             }
         }
     }
+
+  
 }

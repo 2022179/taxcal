@@ -17,7 +17,7 @@ public class Taxcal {
      */
     public static void main(String[] args) {
         
-         Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Prompt user for input
         System.out.println("Enter your name:");
