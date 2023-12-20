@@ -59,6 +59,10 @@ class User {
     public double getPRSIRate() {
         return PRSIRate;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
   
 
 }
