@@ -27,13 +27,14 @@ public class Databasesetup {
             stmt.execute("CREATE DATABASE IF NOT EXISTS  'administrator';");
             stmt.execute("USE 'administrator';");
             String sql;
-            sql =  "CREATE TABLE IF NOT EXISTS 'employeedata';)"
+            sql =  "CREATE TABLE IF NOT EXISTS 'userdata';)"
                         + "name VARCHAR(25),"
-                        + "surname varchar (20)"
-                        + "birthdate DATE,"
-                        + "email varchar (30)"
-                        + "staffID INT(5),"
-                        + "password(6)"
+                        + "username varchar (20)"
+                        + "password(6),"
+                        + "grossIncome DOUBLE NOT NULL,"
+                        + "taxCredits DOUBLE NOT NULL"
+                        + "PRSIBand VARCHAR(20) NOT NULL,"
+                        + "PRSIRate DOUBLE NOT NULL;"
                         + ");";
             stmt.execute(sql);
             return true;
