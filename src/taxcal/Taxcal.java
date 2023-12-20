@@ -40,6 +40,15 @@ public class Taxcal {
         double usc = uscCalculator.calculateTax();
         double prsi = prsiCalculator.calculateTax();
         
+        // Display tax calculation results
+        System.out.println("Tax Calculation Results:");
+        System.out.println("Name: " + name);
+        System.out.println("Gross Income: " + grossIncome);
+        System.out.println("Tax Credits: " + taxCredits);
+        System.out.println("Income Tax: " + incomeTax);
+        System.out.println("USC: " + usc);
+        System.out.println("PRSI: " + prsi);
+        System.out.println("Total Tax: " + (incomeTax + usc + prsi));
 
     }
 }
