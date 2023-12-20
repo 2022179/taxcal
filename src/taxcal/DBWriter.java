@@ -21,7 +21,8 @@ public class DBWriter extends Database {
           Statement stmt = conn.createStatement();
              
         ){
-     String sql = String.format("INSERT INTO" + TABLE_NAME +" VALUES ("+"'%S', '%S', '%S', '%d');"
+     String sql = String.format("INSERT INTO" + TABLE_NAME + " VALUES ("
+             +"'%S', '%S', '%S', %d);",
      
      user.getName(),user.getusername user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
      
