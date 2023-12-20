@@ -50,5 +50,9 @@ class PRSICalculator {
         System.out.println("PRSI Rate: " + (prsiRate * 100) + "%");
     }
 
+    double calculateTax() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     
 }
