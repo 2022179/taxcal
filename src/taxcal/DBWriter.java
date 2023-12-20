@@ -58,6 +58,6 @@ public class DBWriter extends Database {
         return false;
             }
         }
-        
+        return true;
     }
-    
+}
