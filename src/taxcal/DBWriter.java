@@ -7,6 +7,7 @@ package taxcal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  *
@@ -23,19 +24,21 @@ public class DBWriter extends Database {
      
      user.getName(), user.getuserName(), user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
      
-     
+     stmt.execute(sql);
+     return true;
      
      }catch(Exception e){
-     
-     
-     
+         e.printStackTrace();
+         return false;
+    
      }
-     
-     
-     
      
     }
     
+    public boolean addAllUser(List<User>userlist){
+        return true;
     
+    
+    }
     
 }
