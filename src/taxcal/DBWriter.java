@@ -6,6 +6,7 @@ package taxcal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * @author User
  */
 public class DBWriter extends Database {
-    public boolean addUser(User user) {
+    public boolean addUser(User user) throws SQLException{
      try(
           Connection conn = DriverManager.getConnection(DB_URL, USER,PASSWORD);   
           Statement stmt = conn.createStatement();
@@ -22,7 +23,7 @@ public class DBWriter extends Database {
         ){
      String sql = String.format("INSERT INTO" + TABLE_NAME +" VALUES ("+"'%S', '%S', '%S', '%d');"
      
-     user.getName(), user.getuserName(), user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
+     user.getName(),user.getusername user.getPassword(), user.getGrossIncome(), user.getPRSIRate(), user.getPRSIBand(), user.getTaxCredits());
      
      stmt.execute(sql);
      return true;
